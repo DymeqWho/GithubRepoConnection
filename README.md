@@ -16,7 +16,7 @@ How to set application:
     spring.datasource.password=your_password
 
 How the app works:
-1. when app is running, open your browser or Postman and call
+1. when app is running, open your browser or Postman and call (GET) 
 http://localhost:8080/user/{username}
 in {username} prompt name of user whose public repos you would like to check.
 You will receive JSON with info:
