@@ -20,8 +20,8 @@ How the app works:
 http://localhost:8080/user/{username}
 in {username} prompt name of user whose public repos you would like to check.
 You will receive JSON with info:
-● user name
-● repository name
-● description
-● creation date in the format "dd-MM-yyyy HH:mm"
-● number of stars
+- user name
+- repository name
+- description
+- creation date in the format "dd-MM-yyyy HH:mm"
+- number of stars
