@@ -9,6 +9,13 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Translate incoming date from Github API to ZonedDateTime
+ *
+ * @author Dymitr Misiejuk
+ * @see GithubUserRepo
+ * @since 0.0.1
+ */
 class DateHandler extends StdDeserializer<ZonedDateTime> {
 
     public DateHandler() {

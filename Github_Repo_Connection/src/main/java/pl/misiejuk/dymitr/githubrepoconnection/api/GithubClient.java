@@ -11,6 +11,15 @@ import pl.misiejuk.dymitr.githubrepoconnection.api.dto.GithubUserRepo;
 
 import java.util.List;
 
+/**
+ * Connects with Github repository from where we get information about Github interesting users repositories and
+ * creates list of all users repositories. We map what we get from Github to type we need in our application.
+ *
+ * @author Dymitr Misiejuk
+ * @see AppConfig
+ * @see GithubUserRepo
+ * @since 0.0.1
+ */
 @Service
 @RequiredArgsConstructor
 public class GithubClient {

@@ -7,6 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.misiejuk.dymitr.githubrepoconnection.dto.response.GithubUserReposResponse;
 import pl.misiejuk.dymitr.githubrepoconnection.service.GithubRepoService;
 
+/**
+ * Has method responsible for calling on user's path method responsible for getting information from the Github repository.
+ * There begins and ends application.
+ *
+ * @author Dymitr Misiejuk
+ * @see GithubRepoService
+ * @since 0.0.1
+ */
 @RestController
 @RequiredArgsConstructor
 public class UserReposController {

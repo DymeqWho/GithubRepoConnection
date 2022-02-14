@@ -7,6 +7,14 @@ import lombok.Setter;
 
 import java.time.ZonedDateTime;
 
+/**
+ * Represents Github repository owned by user.
+ *
+ * @author Dymitr Misiejuk
+ * @see GithubOwner
+ * @see DateHandler
+ * @since 0.0.1
+ */
 @Getter
 @Setter
 public class GithubUserRepo {

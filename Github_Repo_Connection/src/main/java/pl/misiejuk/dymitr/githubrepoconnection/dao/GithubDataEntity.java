@@ -8,6 +8,15 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+
+/**
+ * Represents data stored in database. Every single repository is stored like that.
+ * Many repositories may have one Owner.
+ *
+ * @author Dymitr Misiejuk
+ * @see Owner
+ * @since 0.0.1
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

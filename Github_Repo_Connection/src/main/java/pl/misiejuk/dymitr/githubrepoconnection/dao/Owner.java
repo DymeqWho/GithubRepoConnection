@@ -8,6 +8,14 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Represents data stored in database. Owner is a person, whose repositories we would like to check.
+ * One Owner may have multiple repositories.
+ *
+ * @author Dymitr Misiejuk
+ * @see GithubDataEntity
+ * @since 0.0.1
+ */
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,5 +27,5 @@ public class Owner {
     private Long id;
     private String login;
     @OneToMany(mappedBy = "id")
-    private List<GithubDataEntity>  githubDataEntities;
+    private List<GithubDataEntity> githubDataEntities;
 }
