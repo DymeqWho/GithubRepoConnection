@@ -1,13 +1,10 @@
 package pl.misiejuk.dymitr.githubrepoconnection.api.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Getter;
 import lombok.Setter;
-import pl.misiejuk.dymitr.githubrepoconnection.dao.Owner;
 
-import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 @Getter

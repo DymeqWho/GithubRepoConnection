@@ -17,7 +17,7 @@ public class GithubClient {
     private static final String URL_PATTERN = "https://api.github.com/users/{user}/repos";
     private final RestTemplate restTemplate;
 
-    public List<GithubUserRepo> gettReposForUser(String user) {
+    public List<GithubUserRepo> getReposForUser(String user) {
         TypeReference<List<GithubUserRepo>> typeReference = new TypeReference<>() {
         };
         String response = restTemplate.getForObject(URL_PATTERN, String.class, user);

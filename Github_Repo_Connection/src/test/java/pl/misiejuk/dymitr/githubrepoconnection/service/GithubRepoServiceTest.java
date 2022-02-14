@@ -49,7 +49,7 @@ class GithubRepoServiceTest {
         //then
         assertEquals(1, response.getRepos().size());
         assertEquals("d", response.getRepos().get(0).getName());
-        Mockito.verify(githubClient, Mockito.times(0)).gettReposForUser(any());
+        Mockito.verify(githubClient, Mockito.times(0)).getReposForUser(any());
         Mockito.verify(githubDataEntityRepo, Mockito.times(0)).saveAll(any());
     }
 
@@ -66,7 +66,7 @@ class GithubRepoServiceTest {
         githubUserRepo.setOwner(owner);
         githubUserRepo.setStargazersCount(10L);
         githubUserRepo.setCreationAt(ZonedDateTime.of(LocalDateTime.of(2022, 1, 1, 12, 0), ZoneId.of("UTC")));
-        Mockito.when(githubClient.gettReposForUser("testUser"))
+        Mockito.when(githubClient.getReposForUser("testUser"))
                 .thenReturn(List.of(githubUserRepo));
 
         Owner databaseOwner = new Owner(2L, "testUser", new ArrayList<>());

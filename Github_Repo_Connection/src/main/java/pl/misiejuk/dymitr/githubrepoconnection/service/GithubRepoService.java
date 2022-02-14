@@ -15,7 +15,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,14 +23,10 @@ public class GithubRepoService {
     private final GithubClient githubClient;
     private final GithubDataEntityRepo githubDataEntityRepo;
 
-    //githuba => bazy danych
-
-    //sprawdź z bazy, jeżeli nei ma to ściągnij, zapisz i zwróć
-
     public GithubUserReposResponse getGithubReposInfo(String user) {
         List<GithubDataEntity> githubDataEntitiesByOwnerLogin = githubDataEntityRepo.findGithubDataEntitiesByOwnerLogin(user);
         if (githubDataEntitiesByOwnerLogin.isEmpty()) {
-            List<GithubUserRepo> githubUserRepos = githubClient.gettReposForUser(user);
+            List<GithubUserRepo> githubUserRepos = githubClient.getReposForUser(user);
             if (!githubUserRepos.isEmpty()) {
                 Owner owner = new Owner(null, user, new ArrayList<>());
                 List<GithubDataEntity> githubDataEntities = githubUserRepos.stream().map(x ->
