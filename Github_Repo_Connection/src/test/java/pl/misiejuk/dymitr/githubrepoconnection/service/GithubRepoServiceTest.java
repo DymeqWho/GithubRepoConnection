@@ -94,7 +94,6 @@ class GithubRepoServiceTest {
         Mockito.when(githubDataEntityRepo.saveAll(any())).thenReturn(githubDataEntities);
 
         //when
-        GithubRepoService githubRepoService = new GithubRepoService(githubClient, githubDataEntityRepo);
         GithubUserReposResponse response = githubRepoService.getGithubReposInfo("testUser");
 
         //then
@@ -108,7 +107,18 @@ class GithubRepoServiceTest {
 
         assertEquals(1, response.getRepos().size());
         assertEquals("d", response.getRepos().get(0).getName());
+        assertEquals("d", response.getRepos().get(0).getDescription());
+        assertEquals("01-01-2022 12:00", response.getRepos().get(0).getCreationAt());
+        assertEquals(10L, response.getRepos().get(0).getStargazersCount());
 
+
+        assertNotEquals("Test", ((GithubDataEntity) value.get(0)).getName());
+
+        assertNotEquals(2, response.getRepos().size());
+        assertNotEquals("invalidName", response.getRepos().get(0).getName());
+        assertNotEquals("invalidDesc", response.getRepos().get(0).getDescription());
+        assertNotEquals("02-02-2222 12:22", response.getRepos().get(0).getCreationAt());
+        assertNotEquals(15L, response.getRepos().get(0).getStargazersCount());
     }
 
     private ZonedDateTime showUtc() {
